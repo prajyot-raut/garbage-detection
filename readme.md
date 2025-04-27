@@ -26,7 +26,10 @@ This project uses a custom-trained YOLOv8 model to detect various types of garba
     cd <repository-directory>
     ```
 
-2.  **Create a virtual environment (recommended):**
+2.  **Download Model:**
+    Download the model by clicking here: [link](https://drive.google.com/file/d/1n5dCbYZ_gz8rU0nXHNHOiU3Slzr6xi4j/view?usp=drive_link)
+
+3.  **Create a virtual environment (recommended):**
 
     ```bash
     python -m venv .venv
@@ -37,7 +40,7 @@ This project uses a custom-trained YOLOv8 model to detect various types of garba
       .\.venv\Scripts\activate
       ```
 
-3.  **Install dependencies:**
+4.  **Install dependencies:**
     ```bash
     pip install -r requirements.txt
     ```
