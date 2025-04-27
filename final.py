@@ -4,6 +4,7 @@ import cvzone
 from ultralytics import YOLO
 import datetime # Import datetime module
 import numpy as np # Import numpy
+import random # Import random module
 
 # --- Configuration ---
 video_path = "./final.mp4"
@@ -28,6 +29,12 @@ POPUP_TEXT_SCALE = 0.5
 POPUP_TEXT_THICKNESS = 1
 POPUP_TEXT_COLOR = (255, 255, 255) # White
 POPUP_BG_COLOR = (0, 0, 0) # Black
+
+# --- Coordinate Simulation ---
+BASE_LAT = 30.637753
+BASE_LONG = 76.724986
+# Approx 3 meters offset in degrees (1 deg lat ~ 111km, 1 deg lon ~ 96km at this lat)
+MAX_COORD_OFFSET = 0.000035 # ~3 meters / (avg meters per degree)
 # --- End Configuration ---
 
 # Initialize video capture
@@ -85,7 +92,7 @@ except Exception as e:
 location_line1 = "Manauli, Punjab, India"
 location_line2 = "JPQF+6RW, Sector 83, JLPL Industrial"
 location_line3 = "Area, Manauli, Punjab 140306, India"
-location_line4 = "Lat 30.637753 Long 76.724986"
+# location_line4 will be generated dynamically in the loop
 # --- End Fake Location Data ---
 
 
@@ -142,12 +149,17 @@ while True:
     now = datetime.datetime.now()
     timestamp_str = now.strftime("%d/%m/%y %I:%M:%S %p") # Format like the image
 
-    # Define text lines for the right column
+    # --- Simulate Coordinate Change ---
+    current_lat = BASE_LAT + random.uniform(-MAX_COORD_OFFSET, MAX_COORD_OFFSET)
+    current_long = BASE_LONG + random.uniform(-MAX_COORD_OFFSET, MAX_COORD_OFFSET)
+    location_line4 = f"Lat {current_lat:.6f} Long {current_long:.6f}" # Format to 6 decimal places
+
+    # Define text lines for the right column (including updated coordinates)
     text_lines = [
         location_line1,
         location_line2,
         location_line3,
-        location_line4,
+        location_line4, # Use the updated line
         timestamp_str
     ]
 
