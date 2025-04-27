@@ -1,3 +1,5 @@
-# Green Lens
+# Garbadge Detection
+
+A
 
 - `.\.venv\Scripts\activate`
