@@ -6,6 +6,11 @@ import datetime # Import datetime module
 import numpy as np # Import numpy
 import random # Import random module
 
+"""
+Download the required model weights from the following link:
+https://drive.google.com/file/d/10lAp-UqU96VQklqrF3uFQwhzmPOibNZN/view?usp=drive_link
+"""
+
 # --- Configuration ---
 video_path = "./final.mp4"
 model_path = "./best.pt"
