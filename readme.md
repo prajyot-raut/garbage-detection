@@ -1,6 +1,6 @@
 # Garbage Detection
 
-This project uses a custom-trained YOLOv8 model to detect various types of garbage items in a video feed.
+This project uses a custom-trained YOLOv8 model to detect various types of garbage items in a video feed. The detection model (`model.pt`) is a YOLOv8 model trained on a custom dataset for garbage detection having around 8000 labeled images. The specific classes the model can detect are listed in the `classNames` variable within [`main.py`](main.py).
 
 ## Features
 
@@ -56,10 +56,6 @@ This project uses a custom-trained YOLOv8 model to detect various types of garba
     python main.py
     ```
 6.  Press 'q' to quit the video display window.
-
-## Model
-
-The detection model (`model.pt`) is a YOLOv8 model trained on a custom dataset for garbage detection having around 8000 labeled images. The specific classes the model can detect are listed in the `classNames` variable within [`main.py`](main.py).
 
 ## Author
 
